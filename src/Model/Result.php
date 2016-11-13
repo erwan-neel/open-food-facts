@@ -15,7 +15,7 @@ class Result
     const PRODUCT_FOUND = 1;
     const PRODUCT_NOT_FOUND = 0;
     /**
-     * @JMS\Type("int")
+     * @JMS\Type("integer")
      * @var int
      */
     protected $status;
