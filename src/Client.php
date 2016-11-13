@@ -10,6 +10,7 @@ namespace Tazorax\OpenFoodFacts;
 
 use GuzzleHttp\Client as HTTPClient;
 use JMS\Serializer\SerializerBuilder;
+use Tazorax\OpenFoodFacts\Model\Product;
 
 class Client
 {
@@ -25,26 +26,34 @@ class Client
 
     /**
      * @param $ean13
+     * @return Product
+     * @throws Exception
      */
     public static function getProductByEAN13($ean13)
     {
         $url = str_replace('{ean13}', $ean13, self::END_POINT_FORMAT);
-        var_dump($url);
+
         $response = self::getHTTPClient()->get($url);
 
         if ($response->getStatusCode() == 200) {
             $jsonData = $response->getBody()->getContents();
-            var_dump(json_decode($jsonData));
+
             $serializer = SerializerBuilder::create()->build();
 
             /** @var Model\Result $object */
             $object = $serializer->deserialize($jsonData, 'Tazorax\OpenFoodFacts\Model\Result', 'json');
 
-            $product = $object->getProduct();
+            if ($object->getStatus() == Model\Result::PRODUCT_FOUND) {
+                return $object->getProduct();
+            } else {
+                throw new Exception('Product not found');
+            }
 
+        } else {
+            throw new Exception('Connection error');
         }
-        var_dump($product);
-        exit;
+
+
     }
 
     /**

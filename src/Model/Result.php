@@ -12,16 +12,33 @@ use JMS\Serializer\Annotation as JMS;
 
 class Result
 {
+    const PRODUCT_FOUND = 1;
+    const PRODUCT_NOT_FOUND = 0;
+    /**
+     * @JMS\Type("int")
+     * @var int
+     */
+    protected $status;
+
     /**
      * @JMS\Type("string")
      * @var string
      */
     protected $code;
+
     /**
      * @JMS\Type("Tazorax\OpenFoodFacts\Model\Product")
      * @var Product
      */
     protected $product;
+
+    /**
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 
     /**
      * @return string
