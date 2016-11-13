@@ -1,0 +1,17 @@
+{
+    "name": "tazorax/open-food-facts",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tazorax",
+            "email": "tazorax@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^5.3",
+        "jms/serializer": "^1.1",
+        "doctrine/common": "^2.5"
+    }
+}
