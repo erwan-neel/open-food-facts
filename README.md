@@ -1,8 +1,9 @@
 # open-food-facts
 [![Build Status](https://img.shields.io/travis/tazorax/open-food-facts/master.svg?style=flat-square)](https://travis-ci.org/tazorax/open-food-facts) 
-[![GitHub license](https://img.shields.io/github/license/tazorax/open-food-facts.svg?style=flat-square)](https://github.com/tazorax/open-food-facts/blob/master/LICENSE)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/2bd62ba8-a658-4c71-b1e4-3c1d764d95d2.svg?style=flat-square)](https://insight.sensiolabs.com/projects/2bd62ba8-a658-4c71-b1e4-3c1d764d95d2)
 [![Packagist](https://img.shields.io/packagist/v/tazorax/open-food-facts.svg?style=flat-square)](https://packagist.org/packages/tazorax/open-food-facts)
 [![Packagist Pre Release](https://img.shields.io/packagist/vpre/tazorax/open-food-facts.svg?style=flat-square)](https://packagist.org/packages/tazorax/open-food-facts)
+[![GitHub license](https://img.shields.io/github/license/tazorax/open-food-facts.svg?style=flat-square)](https://github.com/tazorax/open-food-facts/blob/master/LICENSE)
 
 Non-official PHP port of Open Food Facts API (for read use only)
 
