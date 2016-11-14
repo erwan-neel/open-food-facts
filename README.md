@@ -12,8 +12,6 @@ Using composer
 ## Usage
 
 ```php
-<?php
-
 use Tazorax\OpenFoodFacts\Client;
 use Tazorax\OpenFoodFacts\Exception;
 
