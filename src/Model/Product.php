@@ -26,6 +26,24 @@ class Product
     protected $generic_name;
 
     /**
+     * @JMS\Type("string")
+     * @var string
+     */
+    protected $brands;
+
+    /**
+     * @JMS\Type("string")
+     * @var string
+     */
+    protected $image_url;
+
+    /**
+     * @JMS\Type("string")
+     * @var string
+     */
+    protected $image_thumb_url;
+
+    /**
      * @JMS\Type("ArrayCollection<Tazorax\OpenFoodFacts\Model\Ingredient>")
      * @var ArrayCollection
      */
@@ -45,6 +63,30 @@ class Product
     public function getGenericName()
     {
         return $this->generic_name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBrands()
+    {
+        return $this->brands;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        return $this->image_url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageThumbUrl()
+    {
+        return $this->image_thumb_url;
     }
 
     /**

@@ -22,6 +22,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     {
         $product = Client::getProductByEAN13('7622210421968');
         $this->assertEquals('Petit écolier chocolat au lait', $product->getProductName());
+        $this->assertEquals('LU', $product->getBrands());
     }
 
     /**
