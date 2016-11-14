@@ -5,7 +5,7 @@
 [![Packagist Pre Release](https://img.shields.io/packagist/vpre/tazorax/open-food-facts.svg?style=flat-square)](https://packagist.org/packages/tazorax/open-food-facts)
 [![GitHub license](https://img.shields.io/github/license/tazorax/open-food-facts.svg?style=flat-square)](https://github.com/tazorax/open-food-facts/blob/master/LICENSE)
 
-Non-official PHP port of Open Food Facts API (for read use only)
+Non-official Open Food Facts API PHP Wrapper (for read use only)
 
 ## Install
 Using composer
