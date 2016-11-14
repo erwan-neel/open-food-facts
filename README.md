@@ -1,6 +1,8 @@
 # open-food-facts
 [![Build Status](https://img.shields.io/travis/tazorax/open-food-facts/master.svg?style=flat-square)](https://travis-ci.org/tazorax/open-food-facts) 
 [![GitHub license](https://img.shields.io/github/license/tazorax/open-food-facts.svg?style=flat-square)](https://github.com/tazorax/open-food-facts/blob/master/LICENSE)
+[![Packagist](https://img.shields.io/packagist/v/tazorax/open-food-facts.svg?style=flat-square)]()
+[![Packagist Pre Release](https://img.shields.io/packagist/vpre/tazorax/open-food-facts.svg?style=flat-square)]()
 
 Non-official PHP port of Open Food Facts API (for read use only)
 
