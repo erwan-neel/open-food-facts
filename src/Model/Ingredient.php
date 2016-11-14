@@ -16,22 +16,22 @@ class Ingredient
      * @JMS\Type("int")
      * @var int
      */
-    protected $percent;
+    private $percent;
     /**
      * @JMS\Type("int")
      * @var int
      */
-    protected $rank;
+    private $rank;
     /**
      * @JMS\Type("string")
      * @var string
      */
-    protected $text;
+    private $text;
     /**
      * @JMS\Type("string")
      * @var string
      */
-    protected $id;
+    private $id;
 
     /**
      * @return int

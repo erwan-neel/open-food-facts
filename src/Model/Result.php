@@ -18,19 +18,19 @@ class Result
      * @JMS\Type("integer")
      * @var int
      */
-    protected $status;
+    private $status;
 
     /**
      * @JMS\Type("string")
      * @var string
      */
-    protected $code;
+    private $code;
 
     /**
      * @JMS\Type("Tazorax\OpenFoodFacts\Model\Product")
      * @var Product
      */
-    protected $product;
+    private $product;
 
     /**
      * @return int

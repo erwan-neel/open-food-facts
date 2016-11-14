@@ -17,37 +17,39 @@ class Product
      * @JMS\Type("string")
      * @var string
      */
-    protected $product_name;
+    private $product_name;
 
     /**
      * @JMS\Type("string")
      * @var string
      */
-    protected $generic_name;
+    private $generic_name;
+
+    /**
+     * @JMS\Type("array")
+     * @JMS\SerializedName("brands_tags")
+     * @JMS\Accessor(getter="getBrands",setter="setBrandsFromArray")
+     * @var ArrayCollection<Tazorax\OpenFoodFacts\Model\Brand>
+     */
+    private $brands;
 
     /**
      * @JMS\Type("string")
      * @var string
      */
-    protected $brands;
+    private $image_url;
 
     /**
      * @JMS\Type("string")
      * @var string
      */
-    protected $image_url;
-
-    /**
-     * @JMS\Type("string")
-     * @var string
-     */
-    protected $image_thumb_url;
+    private $image_thumb_url;
 
     /**
      * @JMS\Type("ArrayCollection<Tazorax\OpenFoodFacts\Model\Ingredient>")
-     * @var ArrayCollection
+     * @var ArrayCollection<Tazorax\OpenFoodFacts\Model\Ingredient>
      */
-    protected $ingredients;
+    private $ingredients;
 
     /**
      * @return string
@@ -66,11 +68,28 @@ class Product
     }
 
     /**
-     * @return string
+     * @return ArrayCollection<Tazorax\OpenFoodFacts\Model\Brand>
      */
     public function getBrands()
     {
         return $this->brands;
+    }
+
+    /**
+     * @param array $brands_tags
+     * @return Product
+     */
+    public function setBrandsFromArray($brands_tags)
+    {
+        $this->brands = new ArrayCollection();
+
+        foreach ($brands_tags as $tag) {
+            $brand = new Brand();
+            $brand->setId($tag);
+            $this->brands->add($brand);
+        }
+
+        return $this;
     }
 
     /**
