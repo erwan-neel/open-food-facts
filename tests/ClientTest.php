@@ -30,6 +30,6 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductNotExist()
     {
-        $product = Client::getProductByEAN13('1234567890123');
+        Client::getProductByEAN13('1234567890123');
     }
 }
