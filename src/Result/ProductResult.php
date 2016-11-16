@@ -6,11 +6,12 @@
  * Time: 19:26
  */
 
-namespace Tazorax\OpenFoodFacts\Model;
+namespace Tazorax\OpenFoodFacts\Result;
 
 use JMS\Serializer\Annotation as JMS;
+use Tazorax\OpenFoodFacts\Model\Product;
 
-class Result
+class ProductResult
 {
     const PRODUCT_FOUND = 1;
     const PRODUCT_NOT_FOUND = 0;

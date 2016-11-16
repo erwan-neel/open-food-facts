@@ -15,11 +15,11 @@ Using composer
 ## Usage
 
 ```php
-use Tazorax\OpenFoodFacts\Client;
+use Tazorax\OpenFoodFacts\OpenFoodFactsClient;
 use Tazorax\OpenFoodFacts\Exception;
 
 try {
-    $product = Client::getProductByEAN13('7622210421968');
+    $product = OpenFoodFactsClient::getProductByEAN13('7622210421968');
     
     echo $product->getProductName(); //Output: "Petit écolier chocolat au lait"
 } catch (Exception $e) {

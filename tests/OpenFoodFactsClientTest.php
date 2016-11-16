@@ -9,10 +9,10 @@
 namespace Tazorax\OpenFoodFacts\Tests;
 
 
-use Tazorax\OpenFoodFacts\Client;
+use Tazorax\OpenFoodFacts\OpenFoodFactsClient;
 use Tazorax\OpenFoodFacts\Exception;
 
-class ClientTest extends \PHPUnit_Framework_TestCase
+class OpenFoodFactsClientTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -20,7 +20,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testExistingProduct()
     {
-        $product = Client::getProductByEAN13('7622210421968');
+        $product = OpenFoodFactsClient::getProductByEAN13('7622210421968');
         $this->assertEquals('Petit écolier chocolat au lait', $product->getProductName());
         $this->assertEquals('lu', $product->getBrands()[0]->getId());
     }
@@ -31,6 +31,6 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductNotExist()
     {
-        Client::getProductByEAN13('1234567890123');
+        OpenFoodFactsClient::getProductByEAN13('1234567890123');
     }
 }
