@@ -9,15 +9,18 @@
 namespace Tazorax\OpenFoodFacts\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use JMS\Serializer\Annotation as JMS;
 
 class Brand
 {
     /**
+     * @JMS\Type("string")
      * @var string
      */
     private $id;
 
     /**
+     * @JMS\Type("string")
      * @var string
      */
     private $name;
@@ -25,7 +28,7 @@ class Brand
     /**
      * @var ArrayCollection<Tazorax\OpenFoodFacts\Model\Product>
      */
-    private $products;
+    private $products_;
 
     /**
      * @return string
@@ -58,7 +61,7 @@ class Brand
      */
     public function getProducts()
     {
-        return $this->products;
+        return $this->products_;
     }
 
 

@@ -17,7 +17,7 @@ abstract class AbtractManager
     /**
      *
      */
-    const API_END_POINT = 'http://world.openfoodfacts.org/api/v0';
+    const API_END_POINT = 'http://world.openfoodfacts.org';
 
     /**
      * @var HTTPClient

@@ -33,4 +33,10 @@ class OpenFoodFactsClientTest extends \PHPUnit_Framework_TestCase
     {
         OpenFoodFactsClient::getProductByEAN13('1234567890123');
     }
+
+    public function testBrands()
+    {
+        $brands = OpenFoodFactsClient::getBrands();
+        $this->assertFalse($brands->isEmpty());
+    }
 }
