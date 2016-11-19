@@ -13,11 +13,11 @@ use Tazorax\OpenFoodFacts\Result\ProductResult;
 
 class ProductManager extends AbtractManager
 {
-    const API_ROUTE_ONE = '/api/v0/product/{id}.json';
+    const API_ROUTE_ONE = '/api/v0/product/{bar_code}.json';
 
-    public function findOneByEAN13($code)
+    public function findOneByBarCode($bar_code)
     {
-        $url = str_replace('{id}', $code, self::API_END_POINT . self::API_ROUTE_ONE);
+        $url = str_replace('{bar_code}', $bar_code, self::API_END_POINT . self::API_ROUTE_ONE);
 
         /** @var ProductResult $object */
         $object = self::performCall($url, ProductResult::class);

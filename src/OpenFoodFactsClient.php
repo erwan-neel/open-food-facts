@@ -15,16 +15,19 @@ use Tazorax\OpenFoodFacts\Model\Product;
 class OpenFoodFactsClient
 {
     /**
-     * @param $ean13
+     * @param $bar_code
      * @return Product
      * @throws Exception
      */
-    public static function getProductByEAN13($ean13)
+    public static function getProductByBarCode($bar_code)
     {
         $manager = new ProductManager();
-        return $manager->findOneByEAN13($ean13);
+        return $manager->findOneByBarCode($bar_code);
     }
 
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
     public static function getBrands()
     {
         $manager = new BrandManager();

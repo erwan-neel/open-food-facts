@@ -20,9 +20,11 @@ class OpenFoodFactsClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testExistingProduct()
     {
-        $product = OpenFoodFactsClient::getProductByEAN13('7622210421968');
+        $product = OpenFoodFactsClient::getProductByBarCode('7622210421968');
         $this->assertEquals('Petit écolier chocolat au lait', $product->getProductName());
         $this->assertEquals('lu', $product->getBrands()[0]->getId());
+        $this->assertEquals('Petit beurre avec tablette de chocolat au lait', $product->getGenericName());
+        $this->assertEquals('150g (12 biscuits)', $product->getQuantity());
     }
 
     /**
@@ -31,7 +33,7 @@ class OpenFoodFactsClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductNotExist()
     {
-        OpenFoodFactsClient::getProductByEAN13('1234567890123');
+        OpenFoodFactsClient::getProductByBarCode('1234567890123');
     }
 
     public function testBrands()
