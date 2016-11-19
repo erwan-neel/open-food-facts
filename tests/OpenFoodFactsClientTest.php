@@ -25,6 +25,8 @@ class OpenFoodFactsClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('lu', $product->getBrands()[0]->getId());
         $this->assertEquals('Petit beurre avec tablette de chocolat au lait', $product->getGenericName());
         $this->assertEquals('150g (12 biscuits)', $product->getQuantity());
+        $this->assertStringEndsWith('jpg', $product->getImage()->getUrl());
+        $this->assertStringStartsWith('http', $product->getImage()->getUrl());
     }
 
     /**

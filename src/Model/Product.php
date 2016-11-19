@@ -53,97 +53,74 @@ class Product
     private $quantity;
 
     /**
-     * @var Image
-     */
-    private $image;
-
-    /**
-     * @var Image
-     */
-    private $image_front;
-
-    /**
-     * @var Image
-     */
-    private $image_ingredients;
-
-    /**
-     * @var Image
-     */
-    private $image_nutrition;
-
-
-    /* Following properties are not used by this class, only by and for deserializer */
-
-    /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageUrl")
+     * @var string
      */
     private $image_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageThumbUrl")
+     * @var string
      */
     private $image_thumb_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageSmallUrl")
+     * @var string
      */
     private $image_small_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageFrontUrl")
+     * @var string
      */
     private $image_front_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageFrontThumbUrl")
+     * @var string
      */
     private $image_front_thumb_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageFrontSmallUrl")
+     * @var string
      */
     private $image_front_small_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageIngredientsUrl")
+     * @var string
      */
     private $image_ingredients_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageIngredientsThumbUrl")
+     * @var string
      */
     private $image_ingredients_thumb_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageIngredientsSmallUrl")
+     * @var string
      */
     private $image_ingredients_small_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageNutritionUrl")
+     * @var string
      */
     private $image_nutrition_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageNutritionThumbUrl")
+     * @var string
      */
     private $image_nutrition_thumb_url;
 
     /**
      * @JMS\Type("string")
-     * @JMS\Accessor(setter="setImageNutritionSmallUrl")
+     * @var string
      */
     private $image_nutrition_small_url;
 
@@ -153,7 +130,13 @@ class Product
      */
     public function getImage()
     {
-        return $this->image;
+        $image = new Image();
+        $image
+            ->setUrl($this->image_url)
+            ->setSmallUrl($this->image_small_url)
+            ->setThumbUrl($this->image_thumb_url);
+
+        return $image;
     }
 
     /**
@@ -161,7 +144,13 @@ class Product
      */
     public function getImageFront()
     {
-        return $this->image_front;
+        $image = new Image();
+        $image
+            ->setUrl($this->image_front_url)
+            ->setSmallUrl($this->image_front_small_url)
+            ->setThumbUrl($this->image_front_thumb_url);
+
+        return $image;
     }
 
     /**
@@ -169,7 +158,13 @@ class Product
      */
     public function getImageIngredients()
     {
-        return $this->image_ingredients;
+        $image = new Image();
+        $image
+            ->setUrl($this->image_ingredients_url)
+            ->setSmallUrl($this->image_ingredients_small_url)
+            ->setThumbUrl($this->image_ingredients_thumb_url);
+
+        return $image;
     }
 
     /**
@@ -177,134 +172,14 @@ class Product
      */
     public function getImageNutrition()
     {
-        return $this->image_nutrition;
+        $image = new Image();
+        $image
+            ->setUrl($this->image_nutrition_url)
+            ->setSmallUrl($this->image_nutrition_small_url)
+            ->setThumbUrl($this->image_nutrition_thumb_url);
+
+        return $image;
     }
-
-
-    private function setImageUrls($property_name, $type, $url)
-    {
-        if (null === $this->$property_name) {
-            $this->$property_name = new Image();
-        }
-
-        switch ($type) {
-            case 'thumb':
-                $this->$property_name->setThumbUrl($url);
-                break;
-            case 'small':
-                $this->$property_name->setSmallUrl($url);
-                break;
-            default:
-                $this->$property_name->setUrl($url);
-                break;
-        }
-
-    }
-
-    /**
-     * @param string $url
-     */
-    public function setImageUrl($url)
-    {
-        $this->setImageUrls('image', '', $url);
-    }
-
-
-    /**
-     * @param string $url
-     */
-    public function setImageThumbUrl($url)
-    {
-        $this->setImageUrls('image', 'thumb', $url);
-    }
-
-
-    /**
-     * @param string $url
-     */
-    public function setImageSmallUrl($url)
-    {
-        $this->setImageUrls('image', 'small', $url);
-    }
-
-    /**
-     * @param string $url
-     */
-    public function setImageFrontUrl($url)
-    {
-        $this->setImageUrls('image_front', '', $url);
-    }
-
-
-    /**
-     * @param string $url
-     */
-    public function setImageFrontThumbUrl($url)
-    {
-        $this->setImageUrls('image_front', 'thumb', $url);
-    }
-
-
-    /**
-     * @param string $url
-     */
-    public function setImageFrontSmallUrl($url)
-    {
-        $this->setImageUrls('image_front', 'small', $url);
-    }
-
-    /**
-     * @param string $url
-     */
-    public function setImageIngredientsUrl($url)
-    {
-        $this->setImageUrls('image_ingredients', '', $url);
-    }
-
-
-    /**
-     * @param string $url
-     */
-    public function setImageIngredientsThumbUrl($url)
-    {
-        $this->setImageUrls('image_ingredients', 'thumb', $url);
-    }
-
-
-    /**
-     * @param string $url
-     */
-    public function setImageIngredientsSmallUrl($url)
-    {
-        $this->setImageUrls('image_ingredients', 'small', $url);
-    }
-
-    /**
-     * @param string $url
-     */
-    public function setImageNutritionUrl($url)
-    {
-        $this->setImageUrls('image_nutrition', '', $url);
-    }
-
-
-    /**
-     * @param string $url
-     */
-    public function setImageNutritionThumbUrl($url)
-    {
-        $this->setImageUrls('image_nutrition', 'thumb', $url);
-    }
-
-
-    /**
-     * @param string $url
-     */
-    public function setImageNutritionSmallUrl($url)
-    {
-        $this->setImageUrls('image_nutrition', 'small', $url);
-    }
-
 
     /**
      * @return mixed
