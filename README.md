@@ -19,7 +19,7 @@ use Tazorax\OpenFoodFacts\OpenFoodFactsClient;
 use Tazorax\OpenFoodFacts\Exception;
 
 try {
-    $product = OpenFoodFactsClient::getProductByEAN13('7622210421968');
+    $product = OpenFoodFactsClient::getProductByBarCode('7622210421968');
     
     echo $product->getProductName(); //Output: "Petit écolier chocolat au lait"
 } catch (Exception $e) {
